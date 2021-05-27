@@ -1,0 +1,49 @@
+﻿<Window x:Class="TrafficPolice.LoginF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficPolice"
+        mc:Ignorable="d"
+        Title="LoginF" Height="345.57" Width="703.164">
+    <Grid Background="LightBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <!--1-->
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+                <!--3-->
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition/>
+                <!--4-->
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Login:" FontSize="32" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+                <TextBox Grid.Column="1" x:Name="LoginTbox" FontSize="32" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Password:" FontSize="32" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+                <TextBox Grid.Column="1" x:Name="PasswordTbox" FontSize="32" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Button Content="Login" x:Name="LoginButton" Click="LoginButton_Click" FontSize="32" Margin="100,0,100,0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

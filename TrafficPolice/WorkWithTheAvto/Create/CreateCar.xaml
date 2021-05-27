@@ -1,0 +1,90 @@
+﻿<Page x:Class="TrafficPolice.CreateCar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateCar" Background="Gray">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Header="Машина">
+            <Grid x:Name="gr_car">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.05*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.05*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="1" Grid.Row="0" TextAlignment="Left" VerticalAlignment="Center" Text="VIN номер"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" TextAlignment="Left" VerticalAlignment="Center" Text="Тип машины"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" TextAlignment="Left" VerticalAlignment="Center" Text="Номер двигателя"/>
+                <TextBlock Grid.Column="1" Grid.Row="3" TextAlignment="Left" VerticalAlignment="Center" Text="Регистрационный номер"/>
+                <TextBlock Grid.Column="1" Grid.Row="4" TextAlignment="Left" VerticalAlignment="Center" Text="Номер кузова"/>
+                <TextBlock Grid.Column="1" Grid.Row="5" TextAlignment="Left" VerticalAlignment="Center" Text="Цвет"/>
+                <TextBlock Grid.Column="1" Grid.Row="6" TextAlignment="Left" VerticalAlignment="Center" Text="max. масса"/>
+                <TextBlock Grid.Column="1" Grid.Row="7" TextAlignment="Left" VerticalAlignment="Center" Text="Водитель"/>
+                <TextBox Grid.Column="2" Grid.Row="0" Margin="5" x:Name="tb_Vin"/>
+                <TextBox Grid.Column="2" Grid.Row="1" Margin="5" x:Name="tb_CarType"/>
+                <TextBox Grid.Column="2" Grid.Row="2" Margin="5" x:Name="tb_EngineNumber"/>
+                <TextBox Grid.Column="2" Grid.Row="3" Margin="5" x:Name="tb_ChossingNumber"/>
+                <TextBox Grid.Column="2" Grid.Row="4" Margin="5" x:Name="tb_bodyNomber"/>
+                <TextBox Grid.Column="2" Grid.Row="5" Margin="5" x:Name="tb_Color"/>
+                <TextBox Grid.Column="2" Grid.Row="6" Margin="5" x:Name="tb_MaxWeight"/>
+                <ComboBox Grid.Column="2" Grid.Row="7" Margin="5" x:Name="cb_Driver"/>
+                <Button Grid.Column="1" Grid.Row="8" Margin="5,8" Content="Создать" x:Name="bt_CreateCar" Click="bt_CreateCar_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="Документы" x:Name="gb_Documents" IsEnabled="False">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.05*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.05*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="СТС" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="ПТС" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="2" Text="Страховка" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="3" Text="Тех.Осмотр" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="4" Text="Заявление" VerticalAlignment="Center"/>
+
+                <Button Grid.Column="2" Grid.Row="0" Content="Создать" Margin="5" x:Name="bt_createCTC" Click="bt_createCTC_Click"/>
+                <Button Grid.Column="2" Grid.Row="1" Content="Создать" Margin="5" x:Name="tb_createPTC" Click="tb_createPTC_Click"/>
+                <Button Grid.Column="2" Grid.Row="2" Content="Создать" Margin="5" x:Name="bt_insurance" Click="bt_insurance_Click"/>
+                <Button Grid.Column="2" Grid.Row="3" Content="Создать" Margin="5" x:Name="bt_createInspections" Click="bt_createInspections_Click"/>
+                <Button Grid.Column="2" Grid.Row="4" Content="Создать" Margin="5" x:Name="bt_Statements" Click="bt_Statements_Click"/>
+                <Button Grid.Column="3" Grid.Row="4" Content="Прикрепить" Margin="5"/>
+                <Button Grid.Column="3" Grid.Row="3" Content="Прикрепить" Margin="5"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

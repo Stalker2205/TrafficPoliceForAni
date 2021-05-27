@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31E8E177-DE55-4565-BB2E-1FF908886767}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TrafficPolice</RootNamespace>
+    <AssemblyName>TrafficPolice</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ForDutyWork\MenuItemCollection\DTP\DtpEvroPage.xaml.cs">
+      <DependentUpon>DtpEvroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\MenuItemCollection\Staff\CreateStaff.xaml.cs">
+      <DependentUpon>CreateStaff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\MenuItemCollection\Staff\CreatwSerificateWindow.xaml.cs">
+      <DependentUpon>CreatwSerificateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Dtp.cs" />
+    <Compile Include="DataBase\DtpCar.cs" />
+    <Compile Include="ForDutyWork\MainDuty.xaml.cs">
+      <DependentUpon>MainDuty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainInfo.xaml.cs">
+      <DependentUpon>MainInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291025220_ADDRaports.cs" />
+    <Compile Include="Migrations\202104291025220_ADDRaports.designer.cs">
+      <DependentUpon>202104291025220_ADDRaports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Raports.cs" />
+    <Compile Include="Migrations\202104291111418_addDTPAndDTPCar.cs" />
+    <Compile Include="Migrations\202104291111418_addDTPAndDTPCar.designer.cs">
+      <DependentUpon>202104291111418_addDTPAndDTPCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\MenuItemCollection\RaportPage.xaml.cs">
+      <DependentUpon>RaportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071025120_FixPhotoInStaff.cs" />
+    <Compile Include="Migrations\202105071025120_FixPhotoInStaff.designer.cs">
+      <DependentUpon>202105071025120_FixPhotoInStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105071323132_addIDStaff.cs" />
+    <Compile Include="Migrations\202105071323132_addIDStaff.designer.cs">
+      <DependentUpon>202105071323132_addIDStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\NewStaffClass.cs" />
+    <Compile Include="Migrations\202105072003400_fixStaff.cs" />
+    <Compile Include="Migrations\202105072003400_fixStaff.designer.cs">
+      <DependentUpon>202105072003400_fixStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\MenuItemCollection\Sertification\ViewSertificateWindow.xaml.cs">
+      <DependentUpon>ViewSertificateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\Reports\ReportsPage.xaml.cs">
+      <DependentUpon>ReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105072057588_fixCarRaports.cs" />
+    <Compile Include="Migrations\202105072057588_fixCarRaports.designer.cs">
+      <DependentUpon>202105072057588_fixCarRaports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\Reports\ReportStaffRankPage.xaml.cs">
+      <DependentUpon>ReportStaffRankPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForDutyWork\Reports\ReportYvolennPage.xaml.cs">
+      <DependentUpon>ReportYvolennPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105081406348_FixDtpCars.cs" />
+    <Compile Include="Migrations\202105081406348_FixDtpCars.designer.cs">
+      <DependentUpon>202105081406348_FixDtpCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105081519040_addDtpScheme.cs" />
+    <Compile Include="Migrations\202105081519040_addDtpScheme.designer.cs">
+      <DependentUpon>202105081519040_addDtpScheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenInsurances.xaml.cs">
+      <DependentUpon>OpenInsurances.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenStatements.xaml.cs">
+      <DependentUpon>OpenStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenInspections.xaml.cs">
+      <DependentUpon>OpenInspections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenPTC.xaml.cs">
+      <DependentUpon>OpenPTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenCTC.xaml.cs">
+      <DependentUpon>OpenCTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Open\OpenCarInfo.xaml.cs">
+      <DependentUpon>OpenCarInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Create\CreateInspections.xaml.cs">
+      <DependentUpon>CreateInspections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Create\CreatePTC.xaml.cs">
+      <DependentUpon>CreatePTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\StatementsClass.cs" />
+    <Compile Include="WorkWithTheAvto\Create\CreateInsurances.xaml.cs">
+      <DependentUpon>CreateInsurances.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Create\CreateStatements.xaml.cs">
+      <DependentUpon>CreateStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Create\CreateCar.xaml.cs">
+      <DependentUpon>CreateCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\Create\CreateCTC.xaml.cs">
+      <DependentUpon>CreateCTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\CarClass.cs" />
+    <Compile Include="Migrations\202104151157537_FixCars.cs" />
+    <Compile Include="Migrations\202104151157537_FixCars.designer.cs">
+      <DependentUpon>202104151157537_FixCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\DriverLicence\AllDriverLicense.xaml.cs">
+      <DependentUpon>AllDriverLicense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\DriverLicence\ViewDriverLicence.xaml.cs">
+      <DependentUpon>ViewDriverLicence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\DriverLicence\CreateDriverLicence.xaml.cs">
+      <DependentUpon>CreateDriverLicence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\DriverLicenceClass.cs" />
+    <Compile Include="Workwithdriver\DriverLicence\PrintBY.xaml.cs">
+      <DependentUpon>PrintBY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\Driver\OpenDriverInfo.xaml.cs">
+      <DependentUpon>OpenDriverInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\Driver\UpdateDriverfirst.xaml.cs">
+      <DependentUpon>UpdateDriverfirst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Ctc.cs" />
+    <Compile Include="DataBase\Car.cs" />
+    <Compile Include="DataBase\Driver.cs" />
+    <Compile Include="DataBase\DriversLicense.cs" />
+    <Compile Include="DataBase\Insurance.cs" />
+    <Compile Include="DataBase\DriverKategoryLicence.cs" />
+    <Compile Include="DataBase\Inspection.cs" />
+    <Compile Include="Migrations\202103021054161_CreateCarDriverDriverLicencePassport.cs" />
+    <Compile Include="Migrations\202103021054161_CreateCarDriverDriverLicencePassport.designer.cs">
+      <DependentUpon>202103021054161_CreateCarDriverDriverLicencePassport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103021105298_CreateStaffSerificationRank.cs" />
+    <Compile Include="Migrations\202103021105298_CreateStaffSerificationRank.designer.cs">
+      <DependentUpon>202103021105298_CreateStaffSerificationRank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103021107421_CreateStaffSerificationRank1.cs" />
+    <Compile Include="Migrations\202103021107421_CreateStaffSerificationRank1.designer.cs">
+      <DependentUpon>202103021107421_CreateStaffSerificationRank1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Passport.cs" />
+    <Compile Include="DataBase\Rank.cs" />
+    <Compile Include="DataBase\Sertification.cs" />
+    <Compile Include="DataBase\Staff.cs" />
+    <Compile Include="Migrations\202103021115070_CreateInsurancePtc.cs" />
+    <Compile Include="Migrations\202103021115070_CreateInsurancePtc.designer.cs">
+      <DependentUpon>202103021115070_CreateInsurancePtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Ptc.cs" />
+    <Compile Include="Migrations\202103021117225_CreateCTC.cs" />
+    <Compile Include="Migrations\202103021117225_CreateCTC.designer.cs">
+      <DependentUpon>202103021117225_CreateCTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103021122482_CreateInspectionStatments.cs" />
+    <Compile Include="Migrations\202103021122482_CreateInspectionStatments.designer.cs">
+      <DependentUpon>202103021122482_CreateInspectionStatments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103021126373_byte.cs" />
+    <Compile Include="Migrations\202103021126373_byte.designer.cs">
+      <DependentUpon>202103021126373_byte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Statement.cs" />
+    <Compile Include="Migrations\202103120837264_driverkategory.cs" />
+    <Compile Include="Migrations\202103120837264_driverkategory.designer.cs">
+      <DependentUpon>202103120837264_driverkategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103121050516_fixDriverLicence.cs" />
+    <Compile Include="Migrations\202103121050516_fixDriverLicence.designer.cs">
+      <DependentUpon>202103121050516_fixDriverLicence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\Driver\CreateDriver.xaml.cs">
+      <DependentUpon>CreateDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\DriverClass.cs" />
+    <Compile Include="DifferentClasses\LoginClass.cs" />
+    <Compile Include="LoginF.xaml.cs">
+      <DependentUpon>LoginF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DifferentClasses\RequestsClass.cs" />
+    <Compile Include="SerchavtoALL\SerchAvto.xaml.cs">
+      <DependentUpon>SerchAvto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchPTC.xaml.cs">
+      <DependentUpon>SerchPTC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchSTS.xaml.cs">
+      <DependentUpon>SerchSTS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchIncurance.xaml.cs">
+      <DependentUpon>SerchIncurance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchPassport.xaml.cs">
+      <DependentUpon>SerchPassport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchDriverLicencePage.xaml.cs">
+      <DependentUpon>SerchDriverLicencePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerchavtoALL\SerchInCars.xaml.cs">
+      <DependentUpon>SerchInCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\SerchDriverID.xaml.cs">
+      <DependentUpon>SerchDriverID.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workwithdriver\WorkWithTheDriver.xaml.cs">
+      <DependentUpon>WorkWithTheDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkWithTheAvto\WorkWithTheAvto.xaml.cs">
+      <DependentUpon>WorkWithTheAvto.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ForDutyWork\MenuItemCollection\DTP\DtpEvroPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\MenuItemCollection\Staff\CreateStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\MenuItemCollection\Staff\CreatwSerificateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\MainDuty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\MenuItemCollection\RaportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\MenuItemCollection\Sertification\ViewSertificateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\Reports\ReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\Reports\ReportStaffRankPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForDutyWork\Reports\ReportYvolennPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenInsurances.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenStatements.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenInspections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenPTC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenCTC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Open\OpenCarInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreateInspections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreatePTC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreateInsurances.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreateStatements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreateCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\Create\CreateCTC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\DriverLicence\AllDriverLicense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\DriverLicence\ViewDriverLicence.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workwithdriver\DriverLicence\CreateDriverLicence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\DriverLicence\PrintBY.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\Driver\OpenDriverInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workwithdriver\Driver\UpdateDriverfirst.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workwithdriver\Driver\CreateDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SerchavtoALL\SerchAvto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SerchavtoALL\SerchPTC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerchavtoALL\SerchSTS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerchavtoALL\SerchIncurance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerchavtoALL\SerchPassport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerchavtoALL\SerchDriverLicencePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerchavtoALL\SerchInCars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\SerchDriverID.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workwithdriver\WorkWithTheDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkWithTheAvto\WorkWithTheAvto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DataBase\MyDBconnection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202103021054161_CreateCarDriverDriverLicencePassport.resx">
+      <DependentUpon>202103021054161_CreateCarDriverDriverLicencePassport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021105298_CreateStaffSerificationRank.resx">
+      <DependentUpon>202103021105298_CreateStaffSerificationRank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021107421_CreateStaffSerificationRank1.resx">
+      <DependentUpon>202103021107421_CreateStaffSerificationRank1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021115070_CreateInsurancePtc.resx">
+      <DependentUpon>202103021115070_CreateInsurancePtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021117225_CreateCTC.resx">
+      <DependentUpon>202103021117225_CreateCTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021122482_CreateInspectionStatments.resx">
+      <DependentUpon>202103021122482_CreateInspectionStatments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103021126373_byte.resx">
+      <DependentUpon>202103021126373_byte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103120837264_driverkategory.resx">
+      <DependentUpon>202103120837264_driverkategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103121050516_fixDriverLicence.resx">
+      <DependentUpon>202103121050516_fixDriverLicence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151157537_FixCars.resx">
+      <DependentUpon>202104151157537_FixCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291025220_ADDRaports.resx">
+      <DependentUpon>202104291025220_ADDRaports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291111418_addDTPAndDTPCar.resx">
+      <DependentUpon>202104291111418_addDTPAndDTPCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071025120_FixPhotoInStaff.resx">
+      <DependentUpon>202105071025120_FixPhotoInStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105071323132_addIDStaff.resx">
+      <DependentUpon>202105071323132_addIDStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105072003400_fixStaff.resx">
+      <DependentUpon>202105072003400_fixStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105072057588_fixCarRaports.resx">
+      <DependentUpon>202105072057588_fixCarRaports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105081406348_FixDtpCars.resx">
+      <DependentUpon>202105081406348_FixDtpCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105081519040_addDtpScheme.resx">
+      <DependentUpon>202105081519040_addDtpScheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Workwithdriver\DriverLicence\MainVY1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GridBorder.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ForDutyWork\MenuItemCollection\Sertification\Удостоверение.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ForDutyWork\MenuItemCollection\DTP\Pero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ForDutyWork\MenuItemCollection\DTP\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ForDutyWork\MenuItemCollection\DTP\Lasso.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

@@ -1,0 +1,113 @@
+﻿<Page x:Class="TrafficPolice.DtpEvroPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DtpEvroPage" Background="Gray" x:Name="PageDtp">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.13*"/>
+            <RowDefinition Height="0.13*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Адрес:" FontSize="23" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Margin="5" x:Name="tb_Adress"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.17*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Свидетели:" FontSize="23" VerticalAlignment="Center" />
+            <TextBox Grid.Column="1" Margin="5" x:Name="tb_People"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="Добавить автотранспортное средство">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.41*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Vin ТС:" FontSize="20"/>
+                        <TextBox Grid.Column="1" Margin="0,2" x:Name="tb_vin"/>
+                        <Button Content="Найти" Grid.Column="2" Margin="5,0,0,0" FontSize="20" x:Name="bt_ViewTS" Click="bt_ViewTS_Click"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Тип машины" FontSize="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                            <TextBlock Text="Водитель" FontSize="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Margin="5" x:Name="tb_CarType" IsEnabled="False" Text="{Binding VenhicleType}" HorizontalContentAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Margin="5" x:Name="tb_Voditel"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="3.5*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid  Grid.Row="0">
+                                <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Обстоятельства ДТП" VerticalAlignment="Center" FontSize="20" />
+                            </Grid>
+                            <RichTextBox Grid.Row="1" Margin="0,5" x:Name="tb_Obsoiat"/>
+                            <Button Grid.Row="2" Content="Добавить" x:Name="bt_createDTpAndFirstCar" Click="bt_createDTpAndFirstCar_Click"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Схема ДТП">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.1*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <Grid  x:Name="gr_Pero" Background="White" >
+                            <Image Source="Pero.png"  x:Name="im_Pero" MouseDown="im_Pero_MouseDown"/>
+                        </Grid>
+                        <Grid x:Name="gr_Lastik">
+                            <Image Source="eraser.png" x:Name="im_Lastik" MouseDown="im_Lastik_MouseDown"/>
+                        </Grid>
+                        <Grid Margin="7,0,0,0" x:Name="gr_lasso">
+                            <Image Source="Lasso.png"  x:Name="im_lasso" MouseDown="im_lasso_MouseDown"/>
+                        </Grid>
+                    </StackPanel>
+                    <InkCanvas x:Name="Can_Scheme" Grid.Row="1"/>
+                    <Button Grid.Row="2" Content="Сохранить информацию о Схеме ДТП" Width="270" x:Name="bt_SaveScheme" Click="bt_SaveScheme_Click"/>
+                </Grid>
+            </GroupBox>
+            
+        </Grid>
+    </Grid>
+</Page>

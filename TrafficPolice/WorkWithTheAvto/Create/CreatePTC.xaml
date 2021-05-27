@@ -1,0 +1,77 @@
+﻿<Window x:Class="TrafficPolice.CreatePTC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficPolice"
+        mc:Ignorable="d"
+        Title="CreatePTC" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.02*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.02*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.05*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1" x:Name="grid_Maingrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Номер" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Серия" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="Год изготовления" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="Объем двигателя" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="Тип Двигателя" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="Эко класс" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="Производитель" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Text="Дата выдачи паспорта" VerticalAlignment="Center"/>
+
+                <TextBox Grid.Column="1" Grid.Row="0" Margin="5" x:Name="tb_Number"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Margin="5" x:Name="tb_Series"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="5" x:Name="tb_YearOfManufacture"/>
+                <TextBox Grid.Column="1" Grid.Row="3" Margin="5" x:Name="tb_EngineVolume"/>
+                <TextBox Grid.Column="1" Grid.Row="4" Margin="5" x:Name="tb_EngineType"/>
+                <TextBox Grid.Column="1" Grid.Row="5" Margin="5" x:Name="tb_EcoClass"/>
+                <TextBox Grid.Column="1" Grid.Row="6" Margin="5" x:Name="tb_Manufacture"/>
+                <DatePicker Grid.Column="1" Grid.Row="7" Margin="5" x:Name="tb_DateOut" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.12*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Таможенные ограничения" TextAlignment="Center"/>
+                    <TextBox Grid.Row="1" Background="LightGray" Margin="5,0,0,0" x:Name="tb_CustomsRestrictions"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Button Margin="5" Content="Создать" x:Name="bt_CreatePTC" Click="bt_CreatePTC_Click"/>
+                </Grid> 
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

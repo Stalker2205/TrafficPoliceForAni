@@ -1,0 +1,125 @@
+﻿<Page x:Class="TrafficPolice.MainInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainInfo" Background="Gray">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Вызовы" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <Grid Grid.Row="1">
+                <ListBox Background="Transparent" BorderBrush="Transparent">
+                    <TextBlock Text="ул.Станкозаводская 22" FontFamily="20"/>
+                    <TextBlock Text="ул.Ленина 11" FontFamily="20"/>
+                    <TextBlock Text="ул.Горького 11" FontFamily="20"/>
+                    <TextBlock Text="ул.Горького 11" FontFamily="20"/>
+                    <TextBlock Text="ул.Вокзальная 10" FontFamily="20"/>
+                    <TextBlock Text="ул.Маяковского 21" FontFamily="20"/>
+                    <TextBlock Text="ул.Есенина 6" FontFamily="20"/>
+                    <TextBlock Text="ул.Есенина 6" FontFamily="20"/>
+                    <TextBlock Text="ул.Фирсова 10" FontFamily="20"/>
+                    <TextBlock Text="ул.Циалковского 5" FontFamily="20"/>
+                    <TextBlock Text="ул.Каширина 8" FontFamily="20"/>
+                    <TextBlock Text="ул.Каширина 8" FontFamily="20"/>
+                    <TextBlock Text="ул.Каширина 8" FontFamily="20"/>
+                    <TextBlock Text="ул.Павлова 27" FontFamily="20"/>
+                    <TextBlock Text="ул.Краснорядская 19" FontFamily="20"/>
+                </ListBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Аварийность на дорогах" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            <StackPanel Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="ДТП:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="211" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Погибло:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="22" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Ранены:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="249" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Машины:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="540" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Иные ТС:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="50" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Вызовы:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="70" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Активны:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="15" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="На посту:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="70" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Патруль:" Grid.Column="0" FontSize="20"/>
+                    <TextBlock Text="90" Grid.Column="1" FontSize="20"/>
+                </Grid>
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

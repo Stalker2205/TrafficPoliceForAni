@@ -1,0 +1,75 @@
+﻿<Page x:Class="TrafficPolice.SerchPassport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SerchPassport" Background="Gray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.07*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.07*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Серия" FontSize="30" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" HorizontalContentAlignment="Center" Margin="5,5,5,5" x:Name="PassportSeriesTbox" TextChanged="DriverLicenceSeriesTbox_TextChanged"/>
+                <TextBlock Grid.Column="2" Text="Номер" FontSize="30" TextAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="3" HorizontalContentAlignment="Center" Margin="5,5,5,5" x:Name="PassportNumberTbox" TextChanged="DriverLicenceSeriesTbox_TextChanged"/>
+                <TextBlock Grid.Column="4" Text="ID машины:" FontSize="25" TextAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="5" HorizontalContentAlignment="Center" Margin="5,5,5,5" x:Name="CarID"/>
+
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="1" Margin="5,5,5,5" Content="Права" x:Name="SerchDriverLicence" Click="SerchDriverLicence_Click"/>
+                    <Button Grid.Row="2" Margin="5,5,5,5" Content="Птс" x:Name="PtcSerch" Click="PtcSerch_Click"/>
+                    <Button Grid.Row="3" Margin="5,5,5,5" Content="Страховка" x:Name="SetchInsurance" Click="SetchInsurance_Click"/>
+                    <Button Grid.Row="4" Margin="5,5,5,5" Content="Водитель" x:Name="SerchDriver" Click="SerchDriver_Click"/>
+                    <Button Grid.Row="5" Margin="5,5,5,5" Content="Авто" x:Name="SerchAvto" Click="SerchAvto_Click"/>
+                </Grid>
+                <DataGrid Grid.Column="0" Margin="0,10,5,0" x:Name="DatagridFirst" IsReadOnly="True">
+
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

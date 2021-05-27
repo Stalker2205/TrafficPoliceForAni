@@ -1,0 +1,80 @@
+﻿<Page x:Class="TrafficPolice.MainDuty"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainDuty" Background="Gray">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.03*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition  Width="0.03*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.05*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.08*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Menu FontSize="15" Grid.Row="0" Background="Transparent" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem Header="Дтп" x:Name="CreateDtp" Click="CreateDtp_Click"/>
+                <MenuItem Header="Рапорт" Click="MenuItem_Click"/>
+                <MenuItem Header="Отчеты" x:Name="bt_Reports" Click="bt_Reports_Click"/>
+                <MenuItem Header="Сотрудники">
+                    <MenuItem Header="Отобразить всех" Click="MenuItem_Click_2"/>
+                    <MenuItem Header="Прием" Click="MenuItem_Click_1"/>
+                </MenuItem>
+            </Menu>
+            <DataGrid x:Name="dg_MainGrid" Grid.Row="1" Visibility="Hidden" Width="400" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="ID">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Menu VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MenuItem Header="{Binding StaffID}" SubmenuOpened="MenuItem_SubmenuOpened">
+                                        <MenuItem Header="Удостоверение" x:Name="bt_viewSertification" Click="bt_viewSertification_Click"/>
+                                        <MenuItem Header="Уволить" x:Name="bt_YvolStaff" Click="Bt_YvolStaff_Click"/>
+                                    </MenuItem>
+                                </Menu>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Имя" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FirstName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Фамилия" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Lastname}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Логин" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Login}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+            <Frame Grid.Row="1" x:Name="WorkFrame">
+                
+            </Frame>
+        </Grid>
+    </Grid>
+</Page>

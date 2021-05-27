@@ -1,0 +1,58 @@
+﻿<Window x:Class="TrafficPolice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficPolice"
+        mc:Ignorable="d"
+        Title="MainWindow" MinWidth="600" MinHeight="450" ResizeMode="NoResize">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="320*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="320*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" x:Name="Photo"/>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <!--Верхний грид с информацией о сотруднике-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column ="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Grid.Row="0" x:Name="Rank"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" x:Name="RankName" IsEnabled="False" VerticalAlignment="Center" TextAlignment="Left"  FontSize="20"/>
+                </Grid>
+                <TextBlock Grid.Row="1"  x:Name="Destination" IsEnabled="False"/>
+            </Grid>
+            <Image Grid.Column="1" x:Name="LogoImg"/>
+        </Grid>
+        <Frame Grid.Row="1" Grid.Column="1" x:Name="FormPage" NavigationUIVisibility="Hidden" Background="Gray"/>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <!--Боковой грид с кнопками-->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button  Grid.Row="0" x:Name="Serchavto" Click="Serchavto_Click"  Content="Поиск авто" Margin="5"/>
+            <Button  Grid.Row="1" x:Name="AllAboutTheDriver" Content="Водители" Margin="5" Click="AllAboutTheDriver_Click"/>
+            <Button Grid.Row="2" x:Name="AllAboutTheAvto" Content="Авто" Margin="5" Click="AllAboutTheAvto_Click"/>
+            <Button Grid.Row="3" Content="Служебное" Margin="5" x:Name="bt_Duty" Click="bt_Duty_Click"/>
+        </Grid>
+    </Grid>
+</Window>

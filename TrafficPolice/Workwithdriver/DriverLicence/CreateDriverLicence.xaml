@@ -1,0 +1,251 @@
+﻿<Page x:Class="TrafficPolice.CreateDriverLicence"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrafficPolice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateDriverLicence">
+
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.03*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.03*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.05*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="MainGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <GroupBox Header="Водитель">
+                        <Grid>
+                            <Grid Grid.Row="1">
+                                <GroupBox Grid.Row="1" Header="Паспортные данные">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.5*"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" x:Name="grDriver">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Фамилия" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Имя" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Отчество" VerticalAlignment="Center"/>
+                                            <TextBox x:Name="tb_LastName" Text="{Binding LastName}" Grid.Column="1" Grid.Row="0" Margin="5" IsEnabled="False"/>
+                                            <TextBox x:Name="tb_Name" Text="{Binding FirstName}" Grid.Column="1" Grid.Row="1" Margin="5" IsEnabled="False"/>
+                                            <TextBox x:Name="tb_Patronimyc" Text="{Binding Patronymic}" Grid.Column="1" Grid.Row="2" Margin="5" IsEnabled="False"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1" x:Name="grPassport">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Серия" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Номер" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Адрес" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Дата выдачи" VerticalAlignment="Center"/>
+                                            <TextBox x:Name="tb_PasSeries" Text="{Binding PassportSeries}" Grid.Column="1" Grid.Row="0" Margin="5" IsEnabled="False"/>
+                                            <TextBox x:Name="tb_PasNumber" Text="{Binding PassportNumber}" Grid.Column="1" Grid.Row="1" Margin="5" IsEnabled="False"/>
+                                            <TextBox x:Name="tb_PasAdress" Text="{Binding PassportAdress}" Grid.Column="1" Grid.Row="2" Margin="5" IsEnabled="False"/>
+                                            <TextBox x:Name="tb_PasDateOfIssue" Text="{Binding DateOfIssue}" Grid.Column="1" Grid.Row="3" Margin="5" IsEnabled="False"/>
+
+
+                                        </Grid>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <GroupBox Header="Новое водительское удостоверение">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Серия:" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Номер:" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Окончание:" VerticalAlignment="Center"/>
+                                <TextBox x:Name="tbLicSeries" Grid.Column="1" Grid.Row="0" Margin="5" IsEnabled="False"/>
+                                <TextBox x:Name="tbLicNumber" Grid.Column="1" Grid.Row="1" Margin="5" IsEnabled="False"/>
+                                <DatePicker Grid.Column="1" Grid.Row="3" x:Name="dpDateofIssue"/>
+                                <Button Grid.Column="2" Grid.Row="0" Margin="5" x:Name="btGeneratSeries" Click="btGeneratSeries_Click" Content="Генерация"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <GroupBox x:Name="gbCategory" Grid.Column="1" Header="Категории">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="5*"/>
+                                                <ColumnDefinition Width="9*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Viewbox Grid.Column="1" Grid.Row="0">
+                                                <TextBlock Text="Дата завершения"/>
+                                            </Viewbox>
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="A" x:Name="cbA" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked"  Content="A1" x:Name="cbA1" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" />
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="B" x:Name="cbB" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" />
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="B1" x:Name="cbB1" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="C" x:Name="cbC" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="C1" x:Name="cbC1" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="D" x:Name="cbD" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" />
+                                            <CheckBox Unchecked="cbA_Unchecked"  Checked="cb_Checked" Content="D1" x:Name="cbD1" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+
+                                            <Viewbox Grid.Row="1" Grid.Column="1">
+                                                <DatePicker x:Name="dpA"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="2" Grid.Column="1">
+                                                <DatePicker x:Name="dpA1"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="3" Grid.Column="1">
+                                                <DatePicker x:Name="dpB" />
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="4" Grid.Column="1">
+                                                <DatePicker x:Name="dpB1"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="5" Grid.Column="1">
+                                                <DatePicker x:Name="dpC"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="6" Grid.Column="1">
+                                                <DatePicker x:Name="dpC1"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="7" Grid.Column="1">
+                                                <DatePicker x:Name="dpD"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="8" Grid.Column="1">
+                                                <DatePicker x:Name="dpD1"/>
+                                            </Viewbox>
+
+
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="44*"/>
+                                                <ColumnDefinition Width="81*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Viewbox Grid.Column="1" Grid.Row="0">
+                                                <TextBlock Text="Дата завершения"/>
+                                            </Viewbox>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="BE" x:Name="cbBE" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="CE" x:Name="cbCE" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="C1E" x:Name="cbC1E" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="DE" x:Name="cbDE" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="D1E" x:Name="cbD1E" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="M" x:Name="cbM" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="Tm" x:Name="cbTm" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"/>
+                                            <CheckBox Unchecked="cbA_Unchecked" Checked="cb_Checked" Content="Tb" x:Name="cbTb" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center"/>
+
+                                            <Viewbox Grid.Row="1" Grid.Column="1">
+                                                <DatePicker x:Name="dpBE"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="2" Grid.Column="1">
+                                                <DatePicker x:Name="dpCE"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="3" Grid.Column="1">
+                                                <DatePicker x:Name="dpC1E"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="4" Grid.Column="1">
+                                                <DatePicker x:Name="dpDE"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="5" Grid.Column="1">
+                                                <DatePicker x:Name="dpD1E"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="6" Grid.Column="1">
+                                                <DatePicker x:Name="dpM"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="7" Grid.Column="1">
+                                                <DatePicker x:Name="dpTm"/>
+                                            </Viewbox>
+                                            <Viewbox Grid.Row="8" Grid.Column="1">
+                                                <DatePicker x:Name="dpTb"/>
+                                            </Viewbox>
+                                        </Grid>
+                                    </Grid>
+                                </GroupBox>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" x:Name="imPhoto" Margin="5,0,0,0"></Image>
+                <StackPanel Grid.Row="1">
+                <Button Grid.Row="1" VerticalAlignment="Top" Content="Выдать права" Margin="5,0,0,0" x:Name="btCreateDriverLicence" Click="btCreateDriverLicence_Click"/>
+                    <Button Grid.Row="1" VerticalAlignment="Top" Content="Сохранить как документ" Margin="5,0,0,0" x:Name="SaveAsDocument" Click="SaveAsDocument_Click"/>
+                <Button Grid.Row="1" VerticalAlignment="Top" Content="Отправить на печать" Margin="5,0,0,0" x:Name="btPrintDialog" Click="btPrintDialog_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

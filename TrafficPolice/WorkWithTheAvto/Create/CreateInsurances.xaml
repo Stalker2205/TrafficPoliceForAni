@@ -1,0 +1,42 @@
+﻿<Window x:Class="TrafficPolice.CreateInsurances"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficPolice"
+        mc:Ignorable="d"
+        Title="CreateInsurances" Height="331" Width="341" ResizeMode="NoResize">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="InsurancesGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.05*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.05*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Номер" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Серия" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Дата начала" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="Дата конца" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="Страхователь" VerticalAlignment="Center"/>
+            
+            <TextBox Grid.Column="2" Grid.Row="0" Margin="8" x:Name="tb_Number"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Margin="8" x:Name="tb_Series"/>
+            <DatePicker Margin="8,0,0,0" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" x:Name="dp_DateStart" />
+            <DatePicker Margin="8,0,0,0" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" x:Name="db_DateEnd"/>
+            <TextBox Grid.Column="2" Grid.Row="4" Margin="8" x:Name="cb_Insurant"/>
+        </Grid>
+        <Button Grid.Row="1" Content="     Создать     " HorizontalAlignment="Center" x:Name="bt_createInsurants" Click="bt_createInsurants_Click"/>
+    </Grid>
+</Window>
