@@ -40,8 +40,8 @@ namespace TrafficPolice
             if (RequestsClass.PackageDocuments == null) { MessageBox.Show("Нет такого ТС"); return; }
             using (MyDBconnection db = new MyDBconnection())
             {
-                //  db.Ptcs.Load();
-                //  DatagridFirst.ItemsSource = db.Ptcs.Local.Where(x => x.PtcID == RequestsClass.PackageDocuments);
+                db.Ptcs.Load();
+                DatagridFirst.ItemsSource = db.Ptcs.Local.Where(x => x.PtcID == RequestsClass.PackageDocuments);
             }
         }
 
@@ -54,8 +54,8 @@ namespace TrafficPolice
             if (RequestsClass.PackageDocuments == null) { MessageBox.Show("Нет такого ТС"); return; }
             using (MyDBconnection db = new MyDBconnection())
             {
-                //  db.Insurances.Load();
-                // DatagridFirst.ItemsSource = db.Insurances.Local.Where(x => x.InsuranceID == RequestsClass.PackageDocuments);
+                db.Insurances.Load();
+                DatagridFirst.ItemsSource = db.Insurances.Local.Where(x => x.InsuranceID == RequestsClass.PackageDocuments);
             }
         }
 

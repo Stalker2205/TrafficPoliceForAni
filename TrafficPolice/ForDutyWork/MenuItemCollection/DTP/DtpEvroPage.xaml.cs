@@ -84,6 +84,7 @@ namespace TrafficPolice
                 dtp.DtpScheme = bitmapBytes;
                 db.SaveChanges();
             }
+            MessageBox.Show("Схема приложена");
 
         }
 
@@ -129,12 +130,14 @@ namespace TrafficPolice
                     dtpCar.CarID = Carid;
                     dtpCar.Voditel = tb_Voditel.Text;
                     dtpCar.DtpID = DtpId;
+                    dtpCar.NameOfScheme = tb_NaScheme.Text;
                     dtpCar.Conditions = text;
                     db.DtpCars.Add(dtpCar);
                     db.SaveChanges();
                 }
-                addKey = true;
+                addKey = false;
             }
+                MessageBox.Show("Успешно");
         }
 
         private void bt_ViewTS_Click(object sender, RoutedEventArgs e)

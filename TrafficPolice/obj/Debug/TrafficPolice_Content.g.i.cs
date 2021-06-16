@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lasso.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("14167098181729_icon.png")]
 
 

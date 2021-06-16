@@ -75,6 +75,7 @@ namespace TrafficPolice
                     var staf = db.Staffs.Local.Where(x => x.StaffID == NewStaffClass.id).First();
                     staf.Status = "Уволен";
                     db.SaveChanges();
+                    dg_MainGrid.ItemsSource = db.Staffs.Local.Where(x => x.Status == "Работает");
                 }
             }
 

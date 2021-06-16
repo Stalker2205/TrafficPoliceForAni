@@ -60,6 +60,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
+                                <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.5*"/>
@@ -67,8 +68,10 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="Тип машины" FontSize="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
                             <TextBlock Text="Водитель" FontSize="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                            <TextBlock Text="На схеме" FontSize="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
                             <TextBox Grid.Row="0" Grid.Column="1" Margin="5" x:Name="tb_CarType" IsEnabled="False" Text="{Binding VenhicleType}" HorizontalContentAlignment="Center"/>
                             <TextBox Grid.Row="1" Grid.Column="1" Margin="5" x:Name="tb_Voditel"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Margin="5" x:Name="tb_NaScheme"/>
                         </Grid>
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>

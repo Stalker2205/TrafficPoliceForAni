@@ -25,35 +25,35 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Имя">
+                <DataGridTemplateColumn Header="Имя" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding FirstName}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Фамилия">
+                <DataGridTemplateColumn Header="Фамилия"  IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Lastname}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Образование">
+                <DataGridTemplateColumn Header="Образование"  IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Education}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Статус">
+                <DataGridTemplateColumn Header="Статус"  IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Status}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Логин">
+                <DataGridTemplateColumn Header="Логин"  IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Login}"/>

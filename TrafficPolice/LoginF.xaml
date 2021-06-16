@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrafficPolice"
         mc:Ignorable="d"
-        Title="LoginF" Height="345.57" Width="703.164">
+        Title="LoginF" Height="345.57" Width="703.164" Icon="14167098181729_icon.png">
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -39,7 +39,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Password:" FontSize="32" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
-                <TextBox Grid.Column="1" x:Name="PasswordTbox" FontSize="32" VerticalAlignment="Center"/>
+                <PasswordBox Grid.Column="1" x:Name="PasswordTbox" FontSize="32" VerticalAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="5">
                 <Button Content="Login" x:Name="LoginButton" Click="LoginButton_Click" FontSize="32" Margin="100,0,100,0"/>

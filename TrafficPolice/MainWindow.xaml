@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrafficPolice"
         mc:Ignorable="d"
-        Title="MainWindow" MinWidth="600" MinHeight="450" ResizeMode="NoResize">
+        Title="MainWindow" MinWidth="600" MinHeight="450" ResizeMode="NoResize" Icon="14167098181729_icon.png">
     <Grid Background="Gray">
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -29,15 +29,13 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.5*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Grid.Row="0" x:Name="Rank"/>
-                    <TextBlock Grid.Column="1" Grid.Row="0" x:Name="RankName" IsEnabled="False" VerticalAlignment="Center" TextAlignment="Left"  FontSize="20"/>
+                    <TextBlock Grid.Row="0" x:Name="RankName" IsEnabled="False" VerticalAlignment="Center" TextAlignment="Right"  FontSize="20" Margin="0,4,0,3"/>
                 </Grid>
-                <TextBlock Grid.Row="1"  x:Name="Destination" IsEnabled="False"/>
+                <TextBlock Grid.Row="1"  x:Name="FIO" IsEnabled="False" TextAlignment="Right" FontSize="20" />
             </Grid>
-            <Image Grid.Column="1" x:Name="LogoImg"/>
+            <Image Grid.Column="1" x:Name="LogoImg" MouseDown="LogoImg_MouseDown"/>
         </Grid>
         <Frame Grid.Row="1" Grid.Column="1" x:Name="FormPage" NavigationUIVisibility="Hidden" Background="Gray"/>
         <Grid Grid.Column="0" Grid.Row="1">

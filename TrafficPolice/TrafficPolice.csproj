@@ -135,6 +135,18 @@
     <Compile Include="Migrations\202105081519040_addDtpScheme.designer.cs">
       <DependentUpon>202105081519040_addDtpScheme.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105282217520_lastfixDTP.cs" />
+    <Compile Include="Migrations\202105282217520_lastfixDTP.designer.cs">
+      <DependentUpon>202105282217520_lastfixDTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105282222418_lastfixDTP1.cs" />
+    <Compile Include="Migrations\202105282222418_lastfixDTP1.designer.cs">
+      <DependentUpon>202105282222418_lastfixDTP1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105282223446_lastfixDTPCar.cs" />
+    <Compile Include="Migrations\202105282223446_lastfixDTPCar.designer.cs">
+      <DependentUpon>202105282223446_lastfixDTPCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithTheAvto\Open\OpenInsurances.xaml.cs">
       <DependentUpon>OpenInsurances.xaml</DependentUpon>
     </Compile>
@@ -527,6 +539,15 @@
     <EmbeddedResource Include="Migrations\202105081519040_addDtpScheme.resx">
       <DependentUpon>202105081519040_addDtpScheme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105282217520_lastfixDTP.resx">
+      <DependentUpon>202105282217520_lastfixDTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105282222418_lastfixDTP1.resx">
+      <DependentUpon>202105282222418_lastfixDTP1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105282223446_lastfixDTPCar.resx">
+      <DependentUpon>202105282223446_lastfixDTPCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -557,6 +578,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ForDutyWork\MenuItemCollection\DTP\Lasso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="14167098181729_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

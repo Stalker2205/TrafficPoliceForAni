@@ -385,7 +385,10 @@ C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\For
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\ForDutyWork\Reports\ReportYvolennPage.g.cs
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\ForDutyWork\Reports\ReportYvolennPage.baml
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.Migrations.FixDtpCars.resources
-C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.csprojAssemblyReference.cache
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.Migrations.addDtpScheme.resources
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\ForDutyWork\MenuItemCollection\DTP\DtpEvroPage.g.cs
 C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\ForDutyWork\MenuItemCollection\DTP\DtpEvroPage.baml
+C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.Migrations.lastfixDTP.resources
+C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.Migrations.lastfixDTP1.resources
+C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.Migrations.lastfixDTPCar.resources
+C:\Users\Stalker\Desktop\TrafficPolice\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.csprojAssemblyReference.cache

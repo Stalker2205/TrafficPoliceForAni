@@ -19,6 +19,7 @@ namespace TrafficPolice
         public Dtp Dtp { get; set; }
         public int DtpID { get; set; }
         public string Conditions { get; set; }
+        public string NameOfScheme { get; set; }
 
     }
 }

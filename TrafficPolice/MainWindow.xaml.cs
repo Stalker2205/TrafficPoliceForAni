@@ -17,35 +17,36 @@ namespace TrafficPolice
             loginF.ShowDialog();
             FormPage.Navigate(new MainInfo());
 
-            //#region Login
-            //if (!LoginClass.key) { Close(); }
-            //#endregion
-            //#region DBSelect
-            //using (MyDBconnection bconnection = new MyDBconnection())
-            //{
-            //    bconnection.Staffs.Load();
-            //    bconnection.Ranks.Load();
-            //    int RID = 0;
-            //    var stf = bconnection.Staffs.Where(x => x.Login == LoginClass.LoginName && x.Password == LoginClass.LoginPassword);
-            //    foreach (Staff staff in stf) RID = staff.RankID;
-            //    var rnk = bconnection.Ranks.Where(X => X.RankID == RID);
-            // //   foreach (Rank rank in rnk) { RankName.Text = rank.RankName; Rank.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + $"\\Image\\Pagon\\{rank.RankPhoto}",UriKind.Absolute)); }
-
-            //}
-            //#endregion 
-            using (MyDBconnection db = new MyDBconnection())
+            #region Login
+            if (LoginClass.key)
             {
-                db.Drivers.Load();
-                var df = db.Drivers.Local.Where(x => x.DriverID == 1);
-                foreach (var da in df)
+                #endregion
+                #region DBSelect
+                using (MyDBconnection bconnection = new MyDBconnection())
                 {
+                    bconnection.Staffs.Load();
+                    bconnection.Ranks.Load();
+                    var stf = bconnection.Staffs.Where(x => x.Login == LoginClass.LoginName && x.Password == LoginClass.LoginPassword).First();
+                    var rnk = bconnection.Ranks.Where(X => X.RankID == stf.RankID).First();
+                    FIO.Text = $"{stf.FirstName} {stf.Lastname}";
+                    RankName.Text = rnk.RankName;
+                }
+                #endregion
+                using (MyDBconnection db = new MyDBconnection())
+                {
+                    db.Staffs.Load();
+                    
+                    var df = db.Staffs.Local.Where(x => x.Login == LoginClass.LoginName && x.Password == LoginClass.LoginPassword).First(); ;
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
-                    bitmap.StreamSource = new MemoryStream(da.Photo);
+                    bitmap.StreamSource = new MemoryStream(df.Photo);
                     bitmap.EndInit();
                     LogoImg.Source = bitmap;
                 }
-
+            }
+            else
+            {
+                Close();
             }
         }
 
@@ -67,6 +68,18 @@ namespace TrafficPolice
         private void bt_Duty_Click(object sender, RoutedEventArgs e)
         {
             FormPage.Navigate(new MainDuty());
+        }
+
+        private void LogoImg_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            using (MyDBconnection db = new MyDBconnection())
+            {
+                db.Staffs.Load();
+                Staff staf = db.Staffs.Local.Where(x => x.Login == LoginClass.LoginName && x.Password == LoginClass.LoginPassword).First();
+                NewStaffClass.id = staf.StaffID;
+            }
+            ViewSertificateWindow dd = new ViewSertificateWindow();
+            dd.ShowDialog();
         }
     }
 }

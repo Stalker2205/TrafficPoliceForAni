@@ -129,6 +129,8 @@ namespace TrafficPolice
                 st.CarID = int.Parse(tb_car.Text);
                 db.Statements.Add(st);
                 db.SaveChanges();
+                MessageBox.Show("Успешно");
+                Close();
             }
         }
     }
